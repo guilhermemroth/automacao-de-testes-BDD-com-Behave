@@ -53,7 +53,8 @@ def step_access_login(context):
 def step_insert_username(context, username):
     el = _username_input(context)
     el.clear()
-    el.send_keys(username)
+    if username:
+       el.send_keys(username)
 
 @given("inserts a username")
 def step_insert_default_username(context):
@@ -66,7 +67,8 @@ def step_insert_default_username(context):
 def step_insert_password(context, password):
     el = _password_input(context)
     el.clear()
-    el.send_keys(password)
+    if password:
+        el.send_keys(password)
 
 @given("inserts a password")
 @given("inserts a valid password")
