@@ -119,9 +119,14 @@ def step_url_contains(context, path):
     _wait(context).until(EC.url_contains(path))
 
 
-# ----------- Cleanup automático por cenário -----------
+# ----------- FIX: empty strings coming from Examples ("") -----------
 
-def after_scenario(context, scenario):
-    # Behave chama hooks se você colocar em environment.py,
-    # mas deixei aqui a função pronta caso você queira migrar.
-    pass
+@given('inserts an invalid password ""')
+def step_invalid_password_empty(context):
+    el = _password_input(context)
+    el.clear()
+
+@given('inserts an invalid username ""')
+def step_invalid_username_empty(context):
+    el = _username_input(context)
+    el.clear()
