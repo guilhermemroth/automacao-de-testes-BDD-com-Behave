@@ -10,7 +10,7 @@ Feature: Failed login in the Saucedemo website
         And show message "<message>"
 
     Examples:
-      | username      | password      | message                                                                 |
+      | username      | password      | message                                                                   |
       | standard_user | secre_tsauce  | Epic sadface: Username and password do not match any user in this service |
       | standart_user | secret_sauce  | Epic sadface: Username and password do not match any user in this service |
       | standart_user | secre_tsauce  | Epic sadface: Username and password do not match any user in this service |

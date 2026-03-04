@@ -10,7 +10,7 @@ Feature: Login in Saucedemo website
         And must have in the URL "<URL>"
         
         Examples:
-        | username        | password      | URL                                                                 |
-        | standard_user   | secret_sauce  | /inventory.html
-        | error_user      | secret_sauce  | /inventory.html
-        | locked_out_user | secret_sauce  | /inventory.html
+        | username        | password      | URL              |
+        | standard_user   | secret_sauce  | /inventory.html  |
+        | error_user      | secret_sauce  | /inventory.html  |
+        | locked_out_user | secret_sauce  | /inventory.html  |
