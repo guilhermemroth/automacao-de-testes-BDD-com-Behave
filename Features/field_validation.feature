@@ -8,13 +8,12 @@ Feature: Necessary login field left blank in the Saucedemo website
         When user clicks the login button
         Then user must stay in the login page
         And show message "<message>"
-        
-        Examples:
-        | username      | password      | message                                                                   |
-        | standard_user |               | Epic sadface: Username and password do not match any user in this service |
-        | standart_user |               | Epic sadface: Username and password do not match any user in this service |
-        | fghjklbnmmnbn |               | Epic sadface: Username and password do not match any user in this service |
 
+        Examples:
+        | username      | password      | message                            |
+        | standard_user |               | Epic sadface: Password is required |
+        | standart_user |               | Epic sadface: Password is required |
+        | fghjklbnmmnbn |               | Epic sadface: Password is required |
     Scenario Outline: Login attempt without username
         Given that user acesses the login page on Saucedemo
         And inserts an invalid username "<username>"
@@ -24,10 +23,10 @@ Feature: Necessary login field left blank in the Saucedemo website
         And show message "<message>"
 
         Examples:
-        | username      | password      | message                                                                   |
-        |               | secret_sauce  | Epic sadface: Username and password do not match any user in this service |
-        |               | jnasjkladmjdn | Epic sadface: Username and password do not match any user in this service |
-        |               | standard_user | Epic sadface: Username and password do not match any user in this service |
+        | username      | password      | message                            |
+        |               | secret_sauce  | Epic sadface: Username is required |
+        |               | jnasjkladmjdn | Epic sadface: Username is required |
+        |               | standard_user | Epic sadface: Username is required |
 
 
   Scenario Outline: Login attempt without username and password
@@ -39,7 +38,7 @@ Feature: Necessary login field left blank in the Saucedemo website
         And show message "<message>"
 
         Examples:
-        | username      | password      | message                                                                   |
-        |               |               | Epic sadface: Username and password do not match any user in this service |
-        |               |               | Epic sadface: Username and password do not match any user in this service |
-        |               |               | Epic sadface: Username and password do not match any user in this service |
+        | username      | password      | message                            |
+        |               |               | Epic sadface: Username is required |
+        |               |               | Epic sadface: Username is required |
+        |               |               | Epic sadface: Username is required |
